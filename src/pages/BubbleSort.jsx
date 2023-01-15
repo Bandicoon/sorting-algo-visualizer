@@ -28,14 +28,14 @@ const BubbleSort = () => {
           swap(j, j + 1);
           setCurrIndexes({ curr: j, prev: j + 1 });
         }
-        await delay(3000 / array.length);
+        await delay(1500 / array.length);
       }
     }
     if (checkSorted()) {
       setIsSorted(true);
       for (let i = 0; i < array.length; i++) {
         setCurrIndexes({ curr: i, prev: '' });
-        await delay(2000 / array.length);
+        await delay(1500 / array.length);
       }
     }
   };
@@ -53,6 +53,8 @@ const BubbleSort = () => {
       [tempArr[i], tempArr[j]] = [tempArr[j], tempArr[i]];
     }
     setArray(tempArr);
+    setIsSorted(false);
+    setCurrIndexes({ curr: '', prev: '' });
   };
 
   return (
